@@ -237,6 +237,13 @@ main{
 }
 
 @media(min-width: 1100px){
+    body{
+        background: var(--bg-desktop) var(--bg-color);
+        background-repeat: no repeat;
+        background-size: cover;
+    }
+
+
     header{
         margin-block: 81px;
         max-width: 1160px;
