@@ -1,31 +1,46 @@
 let tema = "claro"
 
-export function trocarTema(body, botaoTema) {
+const botaoTema = document.querySelector(".tema button")
+botaoTema.addEventListener("click", trocarTema)
 
-    if(localStorage.getItem("tema")){
+const body = document.querySelector("body")
+
+export function trocarTema() {
+
+    if (localStorage.getItem("tema")) {
+
         tema = localStorage.getItem("tema")
+
     }
+}
 
+    if (tema === "claro") {
 
-
-    if(tema == "claro"){
         body.classList.add("escuro")
+
         localStorage.setItem("tema", "escuro")
+
         botaoTema.style.justifyContent = "flex-end"
-    } else{
+
+    } else {
+
         body.classList.remove("escuro")
+
         localStorage.setItem("tema", "claro")
+
         botaoTema.style.justifyContent = "flex-start"
-    }
-}
 
-export function verificarTema(body, botaoTema){
-    if (localStorage.getItem("tema")){
-        tema = localStorage.getItem("tema")
     }
 
-    if (tema === "escuro"){
-        body.classList.add("escuro")
-        botaoTema.style.justifyContent = "flex-end"
+    export function verificarTema() {
+
+        if (localStorage.getItem("tema")) {
+
+            tema = localStorage.getItem("tema")
+        }
+
+        if (tema === "escuro") {
+            body.classList.add("escuro")
+            botaoTema.style.justifyContent = "flex-end"
+        }
     }
-}
