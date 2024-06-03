@@ -8,9 +8,7 @@ const body = document.querySelector("body")
 export function trocarTema() {
 
     if (localStorage.getItem("tema")) {
-
         tema = localStorage.getItem("tema")
-
     }
 }
 
