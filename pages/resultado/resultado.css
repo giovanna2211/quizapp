@@ -193,6 +193,8 @@ main button:hover{
     .tema button{
         width: 48px;
         height: 28px;
+        display: flex;
+        cursor: pointer;
     }
 
     .tema button div{
