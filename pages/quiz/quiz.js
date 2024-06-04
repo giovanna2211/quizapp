@@ -115,19 +115,20 @@ function guardarResposta(evento){
     idInputResposta = evento.target.id
 
     const botaoEnviar = document.querySelector(".alternativas button")
+    botaoEnviar.addEventListener("click", validarResposta)
 }
 
 function validarResposta(){
     const botaoEnviar = document.querySelector(".alternativas button")
     botaoEnviar.innerText = "Próxima"
     botaoEnviar.removeEventListener("click", validarResposta)
-    botaoEnviar.addEventListener("click", proximaPergunta)
+    
 
     if (pergunta === 10) {
         botaoEnviar.innerText = "Finalizar"
         botaoEnviar.addEventListener("click", finalizar)
     }else{
-        botaoEnviar.addEventListener("click", validarResposta)
+        botaoEnviar.addEventListener("click", proximaPergunta)
     }
 
     if (resposta === quiz.questions[pergunta-1].answer) {
@@ -169,5 +170,4 @@ async function iniciar(){
     montarPergunta()
     adicionarEventoInputs()
 }
-
 iniciar()
